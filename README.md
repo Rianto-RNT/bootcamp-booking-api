@@ -5,23 +5,29 @@ https://rian-bootcamp-booking-api.herokuapp.com/
 
 # Application Installation
 ```sh
-> npm i
+ npm i
 ```
 
 # Run App in Development
 ```sh
-> npm run dev
+ npm run dev
 ```
 
 # Run App in Production
 ```sh
-> npm start
+ npm start
 ```
 
 # Route Structure
-# GET/POST/PUT/DELETE
+
+> GET/POST/PUT/DELETE
+
 > api/v1/bootcamps
+
 > api/v1/courses
+
 > api/v1/reviews
+
 > api/v1/auth
+
 > api/v1/users

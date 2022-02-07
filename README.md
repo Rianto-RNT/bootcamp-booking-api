@@ -1,24 +1,24 @@
-# Deployment to heroku
+# 1. Deployment to heroku
 https://rian-bootcamp-booking-api.herokuapp.com/
 
-# API Documentation
+# 2. API Documentation
 
-# Application Installation
+# 3. Application Installation
 ```sh
  npm i
 ```
 
-# Run App in Development
+# 4. Run App in Development
 ```sh
  npm run dev
 ```
 
-# Run App in Production
+# 5. Run App in Production
 ```sh
  npm start
 ```
 
-# Route Structure
+# 6. Route Structure
 
 > GET/POST/PUT/DELETE
 

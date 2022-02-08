@@ -42,11 +42,11 @@ const BootcampSchema = new mongoose.Schema({
     type: {
       type: String,
       enum: ['Point'],
-      required: true
+      // required: true
     },
     coordinates: {
       type: [Number],
-      required: true,
+      // required: true,
       index: '2dsphere'
     },
     formattedAddress: String,
@@ -56,7 +56,7 @@ const BootcampSchema = new mongoose.Schema({
     country: String,
     zipCode: String
   },
-  career: {
+  careers: {
     // Array of strings
     type: [String],
     required: true,
@@ -66,7 +66,7 @@ const BootcampSchema = new mongoose.Schema({
       'Mobile Development',
       'UI/UX',
       'Data Science',
-      'Bussiness',
+      'Business',
       'Other'
     ]
   },

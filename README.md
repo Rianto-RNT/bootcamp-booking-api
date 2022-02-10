@@ -18,7 +18,17 @@ https://rian-bootcamp-booking-api.herokuapp.com/
  npm start
 ```
 
-# 6. Route Structure
+# 6. Import Data to Database
+```sh
+ node seeder -import
+```
+
+# 7. Import Data to Database
+```sh
+ node seeder -destroy
+```
+
+# Route Structure
 
 > GET/POST/PUT/DELETE
 

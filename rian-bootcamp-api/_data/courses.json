@@ -1,11 +1,22 @@
 [
 	{
+		"_id": "5d725a4a7b292f5f8ceff710",
+		"title": "Node Crash Course",
+		"description": "This course will provide you with all of the essentials to become a successful Node js. You will learn to master Asyn Await, node framework and NPM, along with tools like Git, VSCode and Back End frameworks like Express",
+		"weeks": 15,
+		"tuition": 9500,
+		"minimumSkill": "Beginner",
+		"scholarhipsAvailable": true,
+		"bootcamp": "5d713a66ec8f2b88b8f830b9",
+		"user": "5d7a514b5d2c12c7449be777"
+	},
+	{
 		"_id": "5d725a4a7b292f5f8ceff789",
 		"title": "Front End Web Development",
 		"description": "This course will provide you with all of the essentials to become a successful frontend web developer. You will learn to master HTML, CSS and front end JavaScript, along with tools like Git, VSCode and front end frameworks like Vue",
 		"weeks": 8,
 		"tuition": 8000,
-		"minimumSkill": "beginner",
+		"minimumSkill": "Beginner",
 		"scholarhipsAvailable": true,
 		"bootcamp": "5d713995b721c3bb38c1f5d0",
 		"user": "5d7a514b5d2c12c7449be045"
@@ -16,7 +27,7 @@
 		"description": "In this course you will learn full stack web development, first learning all about the frontend with HTML/CSS/JS/Vue and then the backend with Node.js/Express/MongoDB",
 		"weeks": 12,
 		"tuition": 10000,
-		"minimumSkill": "intermediate",
+		"minimumSkill": "Intermediate",
 		"scholarhipsAvailable": true,
 		"bootcamp": "5d713995b721c3bb38c1f5d0",
 		"user": "5d7a514b5d2c12c7449be045"
@@ -27,7 +38,7 @@
 		"description": "In this course you will learn all about the front end with HTML, CSS and JavaScript. You will master tools like Git and Webpack and also learn C# and ASP.NET with Postgres",
 		"weeks": 10,
 		"tuition": 12000,
-		"minimumSkill": "intermediate",
+		"minimumSkill": "Intermediate",
 		"scholarhipsAvailable": true,
 		"bootcamp": "5d713a66ec8f2b88b8f830b8",
 		"user": "5d7a514b5d2c12c7449be046"
@@ -38,7 +49,7 @@
 		"description": "In this course you will learn to create beautiful interfaces. It is a mix of design and development to create modern user experiences on both web and mobile",
 		"weeks": 12,
 		"tuition": 10000,
-		"minimumSkill": "intermediate",
+		"minimumSkill": "Intermediate",
 		"scholarhipsAvailable": true,
 		"bootcamp": "5d713a66ec8f2b88b8f830b8",
 		"user": "5d7a514b5d2c12c7449be046"
@@ -49,7 +60,7 @@
 		"description": "Get started building websites and web apps with HTML/CSS/JavaScript/PHP. We teach you",
 		"weeks": 10,
 		"tuition": 9000,
-		"minimumSkill": "beginner",
+		"minimumSkill": "Beginner",
 		"scholarhipsAvailable": true,
 		"bootcamp": "5d725a037b292f5f8ceff787",
 		"user": "5c8a1d5b0190b214360dc031"
@@ -60,7 +71,7 @@
 		"description": "In this course you will learn Python for data science, machine learning and big data tools",
 		"weeks": 10,
 		"tuition": 12000,
-		"minimumSkill": "intermediate",
+		"minimumSkill": "Intermediate",
 		"scholarhipsAvailable": false,
 		"bootcamp": "5d725a037b292f5f8ceff787",
 		"user": "5c8a1d5b0190b214360dc031"
@@ -71,7 +82,7 @@
 		"description": "This course will teach you how to build high quality web applications with technologies like React, Node.js, PHP & Laravel",
 		"weeks": 8,
 		"tuition": 8000,
-		"minimumSkill": "beginner",
+		"minimumSkill": "Beginner",
 		"scholarhipsAvailable": false,
 		"bootcamp": "5d725a1b7b292f5f8ceff788",
 		"user": "5c8a1d5b0190b214360dc032"
@@ -82,7 +93,7 @@
 		"description": "This course will teach you everything you need to know about quality assurance",
 		"weeks": 6,
 		"tuition": 5000,
-		"minimumSkill": "intermediate",
+		"minimumSkill": "Intermediate",
 		"scholarhipsAvailable": false,
 		"bootcamp": "5d725a1b7b292f5f8ceff788",
 		"user": "5c8a1d5b0190b214360dc032"
@@ -93,7 +104,7 @@
 		"description": "Get started building mobile applications for IOS using Swift and other tools",
 		"weeks": 8,
 		"tuition": 6000,
-		"minimumSkill": "intermediate",
+		"minimumSkill": "Intermediate",
 		"scholarhipsAvailable": false,
 		"bootcamp": "5d725a1b7b292f5f8ceff788",
 		"user": "5c8a1d5b0190b214360dc032"

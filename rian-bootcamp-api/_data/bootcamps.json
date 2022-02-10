@@ -1,18 +1,35 @@
 [
   {
+		"_id": "5d713a66ec8f2b88b8f830b9",
+		"user": "5d725a1b7b292f5f8ceff788",
+		"name": "RNT Academy Bootcamp",
+		"description": "RNT Academy is a full stack JavaScript Bootcamp located in the heart of Sumbawa that focuses on the technologies you need to get a high paying job as a web developer",
+		"website": "https://rianto-rnt.github.io/rianto-cv/",
+		"phone": "081315127397",
+		"email": "rianto.rnt@gmail.com",
+		"address": "Lenangguar, Sumbawa, NTB 84372",
+		"careers": ["Web Development", "IT Project Management", "Business"],
+		"housing": true,
+		"jobAssistance": true,
+		"jobGuarantee": false,
+		"acceptGi": true,
+    "averageCost": 11000
+	},
+  {
     "_id": "5d713995b721c3bb38c1f5d0",
     "user": "5d7a514b5d2c12c7449be045",
-    "name": "RNT Academy Bootcamp",
-    "description": "RNT Academy is a full stack JavaScript Bootcamp located in the heart of Sumbawa that focuses on the technologies you need to get a high paying job as a web developer",
-    "website": "https://rianto-rnt.github.io/rianto-cv/",
-    "phone": "081315127397",
-    "email": "rianto.rnt@gmail.com",
-    "address": "Lenangguar, Sumbawa, NTB 84372",
-    "careers": ["Web Development", "IT Project Management", "Business"],
+    "name": "Devworks Bootcamp",
+    "description": "Devworks is a React Native Bootcamp located in Boston.",
+    "website": "https://devworks.com",
+    "phone": "(111) 111-1111",
+    "email": "enroll@devworks.com",
+    "address": "233 Bay State Rd Boston MA 02215",
+    "careers": ["Web Development", "UI/UX", "Business"],
     "housing": true,
     "jobAssistance": true,
     "jobGuarantee": false,
-    "acceptGi": true
+    "acceptGi": true,
+    "averageCost": 10000
   },
   {
     "_id": "5d713a66ec8f2b88b8f830b8",
@@ -27,7 +44,8 @@
     "housing": false,
     "jobAssistance": true,
     "jobGuarantee": false,
-    "acceptGi": true
+    "acceptGi": true,
+    "averageCost": 12000
   },
   {
     "_id": "5d725a037b292f5f8ceff787",
@@ -42,7 +60,8 @@
     "housing": false,
     "jobAssistance": false,
     "jobGuarantee": false,
-    "acceptGi": false
+    "acceptGi": false,
+    "averageCost": 8000
   },
   {
     "_id": "5d725a1b7b292f5f8ceff788",
@@ -62,21 +81,8 @@
     "housing": false,
     "jobAssistance": true,
     "jobGuarantee": true,
-    "acceptGi": true
-  },
-  {
-    "_id": "5d713995b721c3bb38c1f5d5",
-    "user": "5d7a514b5d2c12c7449be049",
-    "name": "Devworks Bootcamp",
-    "description": "Devworks is a React Native Bootcamp for mobile native developer",
-    "website": "https://devworks.com",
-    "phone": "(111) 111-1111",
-    "email": "enroll@devworks.com",
-    "address": "233 Bay State Rd Boston MA 02215",
-    "careers": ["Mobile Development", "UI/UX", "Business"],
-    "housing": true,
-    "jobAssistance": true,
-    "jobGuarantee": false,
-    "acceptGi": true
+    "acceptGi": true,
+    "averageCost": 5000
+    
   }
 ]

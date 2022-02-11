@@ -28,7 +28,7 @@ const courses = JSON.parse(
 const importData = async () => {
   try {
     await Bootcamp.create(bootcamps);
-    await Course.create(courses);
+    // await Course.create(courses); // Comment out for disable import to DB
 
     console.log(
       'Data have been Imported. Please check your database.'.green.inverse.bold
@@ -44,7 +44,7 @@ const importData = async () => {
 const deleteData = async () => {
   try {
     await Bootcamp.deleteMany();
-    await Course.deleteMany();
+    await Course.deleteMany(); // Comment out for disable delete in DB
 
     console.log(
       'WARNING!!! Data in Database have been Destroyed.'.red.inverse.bold

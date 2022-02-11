@@ -28,7 +28,7 @@ const courses = JSON.parse(
 const importData = async () => {
   try {
     await Bootcamp.create(bootcamps);
-    // await Course.create(courses); // Comment out for disable import to DB
+    await Course.create(courses); // Comment out for disable import to DB
 
     console.log(
       'Data have been Imported. Please check your database.'.green.inverse.bold

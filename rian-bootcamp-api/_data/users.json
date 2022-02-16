@@ -103,5 +103,12 @@
 		"email": "sara@gmail.com",
 		"role": "user",
 		"password": "123456"
+	},
+	{
+		"_id": "5c8a1d5b0190b214360dc047",
+		"name": "Saproluddin",
+		"email": "saprol@gmail.com",
+		"role": "user",
+		"password": "123456"
 	}
 ]

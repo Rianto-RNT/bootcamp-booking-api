@@ -24,9 +24,13 @@ Live demo (Feel free to visit) 👉 : https://rian-bootcamp.herokuapp.com/
 
 ## API Usage
 
-Check [Bootcamp Booking API Documentation Postman](https://documenter.getpostman.com/view/16994323/UVkiSJNz)
+Check: 
 
-[Bootcamp Booking API Documentation Swagger](https://app.swaggerhub.com/apis-docs/rnt-development-one/bootcamp-booking_api/1.0) for more info.
+[Bootcamp Booking API Documentation Postman](https://documenter.getpostman.com/view/16994323/UVkiSJNz)
+
+[Bootcamp Booking API Documentation Swagger](https://app.swaggerhub.com/apis-docs/rnt-development-one/bootcamp-booking_api/1.0) 
+
+for more info.
 
 ## Deployment
 The website is deployed with git into heroku. Below are the steps taken:

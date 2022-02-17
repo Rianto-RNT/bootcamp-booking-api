@@ -1,0 +1,1823 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Bootcamp Booking API",
+    "description": "Backend Development API for the **Rian Application** to manage Bootcamps, courses, reviews, users, and authentications.",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://example.com/api/v1",
+      "variables": {}
+    },
+    {
+      "url": "http://localhost:5000",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/bootcamps": {
+      "get": {
+        "tags": [
+          "Bootcamp"
+        ],
+        "summary": "Get All Bootcamps",
+        "description": "## GET all Bootcamps data from database",
+        "operationId": "GetAllBootcamps",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "JSON Type",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Bootcamp"
+        ],
+        "summary": "Create New Bootcamp",
+        "description": "## Create Bootcamp data to database. must be authenticated and publisher or admin.",
+        "operationId": "CreateNewBootcamp",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateNewBootcampRequest"
+              },
+              "example": {
+                "name": "RNT Academy Bootcamp II",
+                "description": "RNT Academy is a full stack JavaScript Bootcamp located in the heart of Sumbawa that focuses on the technologies you need to get a high paying job as a web developer",
+                "website": "https://rianto-rnt.github.io/rianto-cv/",
+                "phone": "081315127397",
+                "email": "rianto.rnt@gmail.com",
+                "address": "Lenangguar, Sumbawa, West Nusa Tenggara, 84372",
+                "careers": [
+                  "Web Development",
+                  "IT Project Management",
+                  "Business"
+                ],
+                "housing": true,
+                "jobAssistance": true,
+                "jobGuarantee": false,
+                "acceptGi": true
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/bootcamps/5d713a66ec8f2b88b8f830b9": {
+      "get": {
+        "tags": [
+          "Bootcamp"
+        ],
+        "summary": "Get Single Bootcamp",
+        "description": "## GET single Bootcamp data from database by ID.",
+        "operationId": "GetSingleBootcamp",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "JSON Type",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/bootcamps/620b079277fad0b26830099a": {
+      "put": {
+        "tags": [
+          "Bootcamp"
+        ],
+        "summary": "Update Bootcamp",
+        "description": "## Update Bootcamp data in database. must be authenticated and publisher or admin.",
+        "operationId": "UpdateBootcamp",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBootcampRequest"
+              },
+              "example": {
+                "housing": "true",
+                "careers": [
+                  "Mobile Development",
+                  "Web Development",
+                  "Data Science"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/bootcamps/620b0cb2ddfdc3616315c70d/photo": {
+      "put": {
+        "tags": [
+          "Bootcamp"
+        ],
+        "summary": "FIX ME WITH MULTER - Bootcamp Photo Upload",
+        "description": "## Upload Bootcamp Photo data in database. must be authenticated and publisher or admin.",
+        "operationId": "FIXMEWITHMULTER-BootcampPhotoUpload",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/bootcamps/620b0bbe261d55719f8cde08": {
+      "delete": {
+        "tags": [
+          "Bootcamp"
+        ],
+        "summary": "Delete Delete Bootcamp",
+        "description": "## **Be Careful with this method**\n\nDelete Bootcamp data in database by ID. must be authenticated and publisher or admin.",
+        "operationId": "DeleteDeleteBootcamp",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/bootcamps/radius/02118/200": {
+      "get": {
+        "tags": [
+          "Bootcamp"
+        ],
+        "summary": "FIX ME- Get Bootcamp by Distance",
+        "description": "Get Bootcamp within a radius of a specific zipcode",
+        "operationId": "FIXME-GetBootcampbyDistance",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "JSON Type",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/courses": {
+      "get": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Get All Courses",
+        "description": "## Get all Courses data from database",
+        "operationId": "GetAllCourses",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/courses/5d725a4a7b292f5f8ceff710": {
+      "get": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Get Single Course",
+        "description": "## Get Single Course data from database by ID.",
+        "operationId": "GetSingleCourse",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/bootcamps/5d713a66ec8f2b88b8f830b9/courses": {
+      "get": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Get Courses of spesific Bootcamp",
+        "description": "## Get a Courses of specific Bootcamp from database.",
+        "operationId": "GetCoursesofspesificBootcamp",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/bootcamps/620b0cb2ddfdc3616315c70d/courses": {
+      "post": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Add Courses to Bootcamp",
+        "description": "## Create Course for a specific bootcamp and send to database by Bootcamp ID.",
+        "operationId": "AddCoursestoBootcamp",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCoursestoBootcampRequest"
+              },
+              "example": {
+                "title": "Node.js For Beginner with Project III",
+                "description": "Learn Node.js by building real-world applications with Node JS, Express, MongoDB, Jest, and more!",
+                "weeks": 30,
+                "tuition": 11000,
+                "minimumSkill": "Beginner",
+                "scholarhipsAvailable": false
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/courses/620b0e9860ca012089d332b4": {
+      "put": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Update Course",
+        "description": "## Upadate Course in database by ID.",
+        "operationId": "UpdateCourse",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCourseRequest"
+              },
+              "example": {
+                "description": "Learn Node.js by building real-world applications with Node JS, Express, MongoDB, Jest, and more!",
+                "tuition": 13000,
+                "minimumSkill": "Intermediate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Course"
+        ],
+        "summary": "Delete Course",
+        "description": "## **Be Careful with this method**\n\nDelete Course in database by ID. must be authenticated and publisher or admin.",
+        "operationId": "DeleteCourse",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "JSON Type",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "Authentications"
+        ],
+        "summary": "Register",
+        "description": "Registration user and publisher",
+        "operationId": "Register",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              },
+              "example": {
+                "name": "Jett",
+                "email": "jett@gmail.com",
+                "password": "123456",
+                "role": "publisher"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Authentications"
+        ],
+        "summary": "Login",
+        "description": "Login User, Publisher and Admin.",
+        "operationId": "Login",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              },
+              "example": {
+                "email": "jett@gmail.com",
+                "password": "123456"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "tags": [
+          "Authentications"
+        ],
+        "summary": "Logout",
+        "description": "Clear token cookie / logout user",
+        "operationId": "Logout",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "JSON Type",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/auth/me": {
+      "get": {
+        "tags": [
+          "Authentications"
+        ],
+        "summary": "Get Me",
+        "description": "Get current login user",
+        "operationId": "GetMe",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "JSON Type",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/auth/forgotpassword": {
+      "post": {
+        "tags": [
+          "Authentications"
+        ],
+        "summary": "Forgot Password",
+        "operationId": "ForgotPassword",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordRequest"
+              },
+              "example": {
+                "email": "rian@gmail.com"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/auth/resetpassword/40ef8a7c004cb413852df8916e0f611aec151233": {
+      "put": {
+        "tags": [
+          "Authentications"
+        ],
+        "summary": "Reset Password",
+        "description": "User can reset password with this endpoint",
+        "operationId": "ResetPassword",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequest"
+              },
+              "example": {
+                "password": "1234567"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/auth/updatepassword": {
+      "put": {
+        "tags": [
+          "Authentications"
+        ],
+        "summary": "Update Password",
+        "description": "Update user password",
+        "operationId": "UpdatePassword",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePasswordRequest"
+              },
+              "example": {
+                "currentPassword": "test1234",
+                "newPassword": "123456"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/auth/updatedetails": {
+      "patch": {
+        "tags": [
+          "Authentications"
+        ],
+        "summary": "Update User Details",
+        "description": "Update Username and email of user",
+        "operationId": "UpdateUserDetails",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserDetailsRequest"
+              },
+              "example": {
+                "email": "rian@gmail.com",
+                "name": "Rian"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": [
+          "Authentications"
+        ],
+        "summary": "Login with Malicious",
+        "operationId": "LoginwithMalicious",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginwithMaliciousRequest"
+              },
+              "example": {
+                "email": {
+                  "$gt": ""
+                },
+                "password": "12345678"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get All Users",
+        "description": "## Get all users data from database",
+        "operationId": "GetAllUsers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create User",
+        "description": "Create User and data will be send into database.",
+        "operationId": "CreateUser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              },
+              "example": {
+                "name": "Saproludin",
+                "email": "saprol@gmail.com",
+                "password": "123456"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/users/5c8a1d5b0190b214360dc040": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get single User",
+        "description": "Get single user data from database",
+        "operationId": "GetsingleUser",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/users/620bb06ab3317addcc81fc4b": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update User",
+        "operationId": "UpdateUser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              },
+              "example": {
+                "name": "Saproluddin"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Delete user",
+        "description": "## **Be Careful with this method**\n\nDelete User data in database",
+        "operationId": "Deleteuser",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/reviews": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Get All Reviews",
+        "description": "Get all review data from database. The review is populate with the bootcamp name and description.",
+        "operationId": "GetAllReviews",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/bootcamps/5d713a66ec8f2b88b8f830b9/reviews": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Get Review for Bootcamp",
+        "description": "Get review data for the specific bootcamp from database.",
+        "operationId": "GetReviewforBootcamp",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/reviews/5d7a514b5d2c12c7449be032": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Get Single Review",
+        "description": "Get single review data from database and populate bootcamp name and description.",
+        "operationId": "GetSingleReview",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/bootcamps/620cd5f59de343c85136618a/reviews": {
+      "post": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Add Review",
+        "description": "Add review for a specific bootcamp.",
+        "operationId": "AddReview",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddReviewRequest"
+              },
+              "example": {
+                "title": "Play valorant",
+                "text": "i learn a lot of tesssssssting",
+                "rating": 4
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/reviews/620cd9d1069a8da8d39bc6fb": {
+      "put": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Update Review",
+        "description": "Update review for user and admin.",
+        "operationId": "UpdateReview",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateReviewRequest"
+              },
+              "example": {
+                "rating": 8,
+                "title": "Great job dude"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Delete Review",
+        "description": "## **Be Careful with this method**\n\nDelete Review data in database by ID. must be authorize or user and admin.",
+        "operationId": "DeleteReview",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "http://example.com/api/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/todos": {
+      "get": {
+        "tags": [
+          "Server Control Testing"
+        ],
+        "summary": "node-http",
+        "description": "## Get all data from database",
+        "operationId": "node-http",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:5000",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Server Control Testing"
+        ],
+        "summary": "node-http",
+        "description": "## Get all data from database",
+        "operationId": "Postnode-http",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/node-http-request"
+              },
+              "example": {
+                "id": 4,
+                "text": "Todo Four"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:5000",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Server Control Testing"
+        ],
+        "summary": "Server Running Test",
+        "description": "## Get all data from database",
+        "operationId": "ServerRunningTest",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://localhost:5000",
+            "variables": {}
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateNewBootcampRequest": {
+        "title": "CreateNewBootcampRequest",
+        "required": [
+          "name",
+          "description",
+          "website",
+          "phone",
+          "email",
+          "address",
+          "careers",
+          "housing",
+          "jobAssistance",
+          "jobGuarantee",
+          "acceptGi"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "careers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "housing": {
+            "type": "boolean"
+          },
+          "jobAssistance": {
+            "type": "boolean"
+          },
+          "jobGuarantee": {
+            "type": "boolean"
+          },
+          "acceptGi": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "name": "RNT Academy Bootcamp II",
+          "description": "RNT Academy is a full stack JavaScript Bootcamp located in the heart of Sumbawa that focuses on the technologies you need to get a high paying job as a web developer",
+          "website": "https://rianto-rnt.github.io/rianto-cv/",
+          "phone": "081315127397",
+          "email": "rianto.rnt@gmail.com",
+          "address": "Lenangguar, Sumbawa, West Nusa Tenggara, 84372",
+          "careers": [
+            "Web Development",
+            "IT Project Management",
+            "Business"
+          ],
+          "housing": true,
+          "jobAssistance": true,
+          "jobGuarantee": false,
+          "acceptGi": true
+        }
+      },
+      "UpdateBootcampRequest": {
+        "title": "UpdateBootcampRequest",
+        "required": [
+          "housing",
+          "careers"
+        ],
+        "type": "object",
+        "properties": {
+          "housing": {
+            "type": "string"
+          },
+          "careers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "housing": "true",
+          "careers": [
+            "Mobile Development",
+            "Web Development",
+            "Data Science"
+          ]
+        }
+      },
+      "AddCoursestoBootcampRequest": {
+        "title": "AddCoursestoBootcampRequest",
+        "required": [
+          "title",
+          "description",
+          "weeks",
+          "tuition",
+          "minimumSkill",
+          "scholarhipsAvailable"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "weeks": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tuition": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minimumSkill": {
+            "type": "string"
+          },
+          "scholarhipsAvailable": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "title": "Node.js For Beginner with Project III",
+          "description": "Learn Node.js by building real-world applications with Node JS, Express, MongoDB, Jest, and more!",
+          "weeks": 30,
+          "tuition": 11000,
+          "minimumSkill": "Beginner",
+          "scholarhipsAvailable": false
+        }
+      },
+      "UpdateCourseRequest": {
+        "title": "UpdateCourseRequest",
+        "required": [
+          "description",
+          "tuition",
+          "minimumSkill"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "tuition": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minimumSkill": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "description": "Learn Node.js by building real-world applications with Node JS, Express, MongoDB, Jest, and more!",
+          "tuition": 13000,
+          "minimumSkill": "Intermediate"
+        }
+      },
+      "RegisterRequest": {
+        "title": "RegisterRequest",
+        "required": [
+          "name",
+          "email",
+          "password",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Jett",
+          "email": "jett@gmail.com",
+          "password": "123456",
+          "role": "publisher"
+        }
+      },
+      "LoginRequest": {
+        "title": "LoginRequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "jett@gmail.com",
+          "password": "123456"
+        }
+      },
+      "LoginwithinjectionsRequest": {
+        "title": "LoginwithinjectionsRequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "$ref": "#/components/schemas/Email"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": {
+            "$gt": ""
+          },
+          "password": "123456"
+        }
+      },
+      "Email": {
+        "title": "Email",
+        "required": [
+          "$gt"
+        ],
+        "type": "object",
+        "properties": {
+          "$gt": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "$gt": ""
+        }
+      },
+      "ForgotPasswordRequest": {
+        "title": "ForgotPasswordRequest",
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "rian@gmail.com"
+        }
+      },
+      "ResetPasswordRequest": {
+        "title": "ResetPasswordRequest",
+        "required": [
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "password": "1234567"
+        }
+      },
+      "UpdatePasswordRequest": {
+        "title": "UpdatePasswordRequest",
+        "required": [
+          "currentPassword",
+          "newPassword"
+        ],
+        "type": "object",
+        "properties": {
+          "currentPassword": {
+            "type": "string"
+          },
+          "newPassword": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "currentPassword": "test1234",
+          "newPassword": "123456"
+        }
+      },
+      "UpdateUserDetailsRequest": {
+        "title": "UpdateUserDetailsRequest",
+        "required": [
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "rian@gmail.com",
+          "name": "Rian"
+        }
+      },
+      "LoginwithMaliciousRequest": {
+        "title": "LoginwithMaliciousRequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "$ref": "#/components/schemas/Email"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": {
+            "$gt": ""
+          },
+          "password": "12345678"
+        }
+      },
+      "CreateUserRequest": {
+        "title": "CreateUserRequest",
+        "required": [
+          "name",
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Saproludin",
+          "email": "saprol@gmail.com",
+          "password": "123456"
+        }
+      },
+      "UpdateUserRequest": {
+        "title": "UpdateUserRequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "Saproluddin"
+        }
+      },
+      "AddReviewRequest": {
+        "title": "AddReviewRequest",
+        "required": [
+          "title",
+          "text",
+          "rating"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "title": "Play valorant",
+          "text": "i learn a lot of tesssssssting",
+          "rating": 4
+        }
+      },
+      "UpdateReviewRequest": {
+        "title": "UpdateReviewRequest",
+        "required": [
+          "rating",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "rating": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "rating": 8,
+          "title": "Great job dude"
+        }
+      },
+      "node-http-request": {
+        "title": "node-http-request",
+        "required": [
+          "id",
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": 4,
+          "text": "Todo Four"
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "Bootcamp",
+      "description": "This folder is containing APIs for **Bootcamps** CRUD functionality, pagination and filtering."
+    },
+    {
+      "name": "Course",
+      "description": "This folder is containing APIs for **Courses** CRUD functionality."
+    },
+    {
+      "name": "Authentications",
+      "description": "This folder is containing APIs for **Authentication** Register, Login, Reset Password, etc."
+    },
+    {
+      "name": "User",
+      "description": "This folder is containing APIs for **Users** CRUD Functionality. Only Admin role can access this route."
+    },
+    {
+      "name": "Review",
+      "description": "This folder is containing APIs for **Review** CRUD Functionality. Only logged in user can review the courses and bootcamp."
+    },
+    {
+      "name": "Server Control Testing"
+    }
+  ]
+}

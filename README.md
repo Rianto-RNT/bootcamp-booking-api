@@ -1,7 +1,13 @@
 # 1. Deployment to heroku
-https://rian-bootcamp-booking-api.herokuapp.com/
+https://rian-bootcamp.herokuapp.com/
 
 # 2. API Documentation
+```sh
+https://documenter.getpostman.com/view/16994323/UVkiSJNz
+```
+```sh
+https://app.swaggerhub.com/apis-docs/rnt-development-one/bootcamp-booking_api/1.0
+```
 
 # 3. Application Installation
 ```sh

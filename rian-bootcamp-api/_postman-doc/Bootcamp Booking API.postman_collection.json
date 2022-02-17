@@ -1,0 +1,1660 @@
+{
+	"info": {
+		"_postman_id": "a8d9f100-0cd7-4be5-b946-33753ab4f031",
+		"name": "Bootcamp Booking API",
+		"description": "Backend Development API for the **Rian Application** to manage Bootcamps, courses, reviews, users, and authentications.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bootcamp",
+			"item": [
+				{
+					"name": "Get All Bootcamps",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps/",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps",
+								""
+							]
+						},
+						"description": "## GET all Bootcamps data from database"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Bootcamp",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps/5d713a66ec8f2b88b8f830b9",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps",
+								"5d713a66ec8f2b88b8f830b9"
+							]
+						},
+						"description": "## GET single Bootcamp data from database by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Bootcamp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMDllOGNlM2QxNjBmNTgzMDY1MTRmYiIsImlhdCI6MTY0NDgzODYwMiwiZXhwIjoxNjQ3NDMwNjAyfQ.0LdovHN_1VYWr0hjdL4Px5fhvDo9NCiP1DkaTOXWgZ0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"RNT Academy Bootcamp II\",\r\n    \"description\": \"RNT Academy is a full stack JavaScript Bootcamp located in the heart of Sumbawa that focuses on the technologies you need to get a high paying job as a web developer\",\r\n    \"website\": \"https://rianto-rnt.github.io/rianto-cv/\",\r\n    \"phone\": \"081315127397\",\r\n    \"email\": \"rianto.rnt@gmail.com\",\r\n    \"address\": \"Lenangguar, Sumbawa, West Nusa Tenggara, 84372\",\r\n    \"careers\": [\r\n        \"Web Development\",\r\n        \"IT Project Management\",\r\n        \"Business\"\r\n    ],\r\n    \"housing\": true,\r\n    \"jobAssistance\": true,\r\n    \"jobGuarantee\": false,\r\n    \"acceptGi\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps"
+							]
+						},
+						"description": "## Create Bootcamp data to database. must be authenticated and publisher or admin."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bootcamp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"housing\": \"true\",\r\n     \"careers\": [\"Mobile Development\", \"Web Development\", \"Data Science\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps/620b079277fad0b26830099a",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps",
+								"620b079277fad0b26830099a"
+							]
+						},
+						"description": "## Update Bootcamp data in database. must be authenticated and publisher or admin."
+					},
+					"response": []
+				},
+				{
+					"name": "FIX ME WITH MULTER - Bootcamp Photo Upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": "/C:/Users/SERVER/Downloads/bootcamp-image.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps/620b0cb2ddfdc3616315c70d/photo",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps",
+								"620b0cb2ddfdc3616315c70d",
+								"photo"
+							]
+						},
+						"description": "## Upload Bootcamp Photo data in database. must be authenticated and publisher or admin."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Delete Bootcamp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps/620b0bbe261d55719f8cde08",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps",
+								"620b0bbe261d55719f8cde08"
+							]
+						},
+						"description": "## **Be Careful with this method**\n\nDelete Bootcamp data in database by ID. must be authenticated and publisher or admin."
+					},
+					"response": []
+				},
+				{
+					"name": "FIX ME- Get Bootcamp by Distance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps/radius/02118/200",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps",
+								"radius",
+								"02118",
+								"200"
+							]
+						},
+						"description": "Get Bootcamp within a radius of a specific zipcode"
+					},
+					"response": []
+				},
+				{
+					"name": "Bootcamp Filtering - Query",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps?housing=true",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps"
+							],
+							"query": [
+								{
+									"key": "averageCost[gte]",
+									"value": "10000",
+									"disabled": true
+								},
+								{
+									"key": "careers[in]",
+									"value": "IT Project Management",
+									"disabled": true
+								},
+								{
+									"key": "location.city",
+									"value": "Sumbawa",
+									"disabled": true
+								},
+								{
+									"key": "housing",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bootcamp Sorting - Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps?select=name,description,housing,averageCost&sort=-averageCost",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps"
+							],
+							"query": [
+								{
+									"key": "select",
+									"value": "name,description,housing,averageCost"
+								},
+								{
+									"key": "sort",
+									"value": "-averageCost"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bootcamp Pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps?page=2",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "select",
+									"value": "name",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This folder is containing APIs for **Bootcamps** CRUD functionality, pagination and filtering."
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Get All Courses",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/courses",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"courses"
+							]
+						},
+						"description": "## Get all Courses data from database"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Course",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/courses/5d725a4a7b292f5f8ceff710",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"courses",
+								"5d725a4a7b292f5f8ceff710"
+							]
+						},
+						"description": "## Get Single Course data from database by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses of spesific Bootcamp",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps/5d713a66ec8f2b88b8f830b9/courses",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps",
+								"5d713a66ec8f2b88b8f830b9",
+								"courses"
+							]
+						},
+						"description": "## Get a Courses of specific Bootcamp from database."
+					},
+					"response": []
+				},
+				{
+					"name": "Courses Filtering",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/courses?select=title",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"courses"
+							],
+							"query": [
+								{
+									"key": "select",
+									"value": "title"
+								}
+							]
+						},
+						"description": "## Get all Courses data from database"
+					},
+					"response": []
+				},
+				{
+					"name": "Courses Pagination",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/courses?page=2&limit=2",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"courses"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						},
+						"description": "## Get all Courses data from database"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Courses to Bootcamp",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMDllOGNlM2QxNjBmNTgzMDY1MTRmYiIsImlhdCI6MTY0NDgzODYwMiwiZXhwIjoxNjQ3NDMwNjAyfQ.0LdovHN_1VYWr0hjdL4Px5fhvDo9NCiP1DkaTOXWgZ0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Node.js For Beginner with Project III\",\r\n    \"description\": \"Learn Node.js by building real-world applications with Node JS, Express, MongoDB, Jest, and more!\",\r\n    \"weeks\": 30,\r\n    \"tuition\": 11000,\r\n    \"minimumSkill\": \"Beginner\",\r\n    \"scholarhipsAvailable\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps/620b0cb2ddfdc3616315c70d/courses",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps",
+								"620b0cb2ddfdc3616315c70d",
+								"courses"
+							]
+						},
+						"description": "## Create Course for a specific bootcamp and send to database by Bootcamp ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Learn Node.js by building real-world applications with Node JS, Express, MongoDB, Jest, and more!\",\r\n    \"tuition\": 13000,\r\n    \"minimumSkill\": \"Intermediate\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/courses/620b0e9860ca012089d332b4",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"courses",
+								"620b0e9860ca012089d332b4"
+							]
+						},
+						"description": "## Upadate Course in database by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/courses/620b0e9860ca012089d332b4",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"courses",
+								"620b0e9860ca012089d332b4"
+							]
+						},
+						"description": "## **Be Careful with this method**\n\nDelete Course in database by ID. must be authenticated and publisher or admin."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder is containing APIs for **Courses** CRUD functionality."
+		},
+		{
+			"name": "Authentications",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Jett\",\r\n    \"email\": \"jett@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"publisher\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/auth/register",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						},
+						"description": "Registration user and publisher"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jett@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/auth/login",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login User, Publisher and Admin."
+					},
+					"response": []
+				},
+				{
+					"name": "Login with injections",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": {\"$gt\": \"\"},\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/auth/login",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login User, Publisher and Admin."
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/auth/logout",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						},
+						"description": "Clear token cookie / logout user"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Me",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/auth/me",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"me"
+							]
+						},
+						"description": "Get current login user"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rian@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/auth/forgotpassword",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"forgotpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/auth/resetpassword/40ef8a7c004cb413852df8916e0f611aec151233",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"resetpassword",
+								"40ef8a7c004cb413852df8916e0f611aec151233"
+							]
+						},
+						"description": "User can reset password with this endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\": \"test1234\",\r\n    \"newPassword\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/auth/updatepassword",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"updatepassword"
+							]
+						},
+						"description": "Update user password"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rian@gmail.com\",\r\n    \"name\": \"Rian\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/auth/updatedetails",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"updatedetails"
+							]
+						},
+						"description": "Update Username and email of user"
+					},
+					"response": []
+				},
+				{
+					"name": "Login with Malicious",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": {\"$gt\": \"\"},\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/users/login",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This folder is containing APIs for **Authentication** Register, Login, Reset Password, etc."
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/users",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						},
+						"description": "## Get all users data from database"
+					},
+					"response": []
+				},
+				{
+					"name": "Get single User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/users/5c8a1d5b0190b214360dc040",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"users",
+								"5c8a1d5b0190b214360dc040"
+							]
+						},
+						"description": "Get single user data from database"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Saproludin\",\r\n    \"email\": \"saprol@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/users",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						},
+						"description": "Create User and data will be send into database."
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Saproluddin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/users/620bb06ab3317addcc81fc4b",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"users",
+								"620bb06ab3317addcc81fc4b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/users/620bb06ab3317addcc81fc4b",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"users",
+								"620bb06ab3317addcc81fc4b"
+							]
+						},
+						"description": "## **Be Careful with this method**\n\nDelete User data in database"
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Get All Users by Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/users?role=publisher",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "publisher"
+								}
+							]
+						},
+						"description": "## Get all data from database"
+					},
+					"response": []
+				}
+			],
+			"description": "This folder is containing APIs for **Users** CRUD Functionality. Only Admin role can access this route."
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Get All Reviews",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/reviews",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"reviews"
+							]
+						},
+						"description": "Get all review data from database. The review is populate with the bootcamp name and description."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Review for Bootcamp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps/5d713a66ec8f2b88b8f830b9/reviews",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps",
+								"5d713a66ec8f2b88b8f830b9",
+								"reviews"
+							]
+						},
+						"description": "Get review data for the specific bootcamp from database."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/reviews/5d7a514b5d2c12c7449be032",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"reviews",
+								"5d7a514b5d2c12c7449be032"
+							]
+						},
+						"description": "Get single review data from database and populate bootcamp name and description."
+					},
+					"response": []
+				},
+				{
+					"name": "Add Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Play valorant\",\r\n    \"text\": \"i learn a lot of tesssssssting\",\r\n    \"rating\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/bootcamps/620cd5f59de343c85136618a/reviews",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"bootcamps",
+								"620cd5f59de343c85136618a",
+								"reviews"
+							]
+						},
+						"description": "Add review for a specific bootcamp."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 8,\r\n    \"title\": \"Great job dude\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}api/v1/reviews/620cd9d1069a8da8d39bc6fb",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"reviews",
+								"620cd9d1069a8da8d39bc6fb"
+							]
+						},
+						"description": "Update review for user and admin."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/reviews/620cd9d1069a8da8d39bc6fb",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"reviews",
+								"620cd9d1069a8da8d39bc6fb"
+							]
+						},
+						"description": "## **Be Careful with this method**\n\nDelete Review data in database by ID. must be authorize or user and admin."
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Get All Reviews with query string",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}api/v1/reviews?rating=7",
+							"host": [
+								"{{URL}}api"
+							],
+							"path": [
+								"v1",
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "rating",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This folder is containing APIs for **Review** CRUD Functionality. Only logged in user can review the courses and bootcamp."
+		},
+		{
+			"name": "Server Control Testing",
+			"item": [
+				{
+					"name": "node-http",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"text\": \"Todo Four\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/todos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todos"
+							]
+						},
+						"description": "## Get all data from database"
+					},
+					"response": []
+				},
+				{
+					"name": "Server Running Test",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								""
+							]
+						},
+						"description": "## Get all data from database"
+					},
+					"response": []
+				},
+				{
+					"name": "node-http",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"text\": \"Todo Four\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/todos",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todos"
+							]
+						},
+						"description": "## Get all data from database"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

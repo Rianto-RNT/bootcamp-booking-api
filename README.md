@@ -193,7 +193,7 @@ $ npm start
 - Update user info
   * Authenticated user only
   * Separate route to update password
-- User CRUD
+- User CRUD Functionality
   * Admin only
 - Users can only be made admin by updating the database field manually
 
